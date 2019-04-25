@@ -12,10 +12,29 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var signInButtonConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //Observers for keyboard
+        func addKeyboardObservers() {
+            let names: [NSNotification.Name] = [
+                UIResponder.keyboardWillShowNotification,
+                UIResponder.keyboardWillHideNotification
+            ]
+            
+            for name in names {
+                NotificationCenter.default.addObserver(
+                    self,
+                    selector: #selector(keyboardWillResize),
+                    name: name,
+                    object: nil
+                )
+            }
+        }
+        
     }
+    
 
     @IBAction func forgotUserNameTapped(_ sender: UIButton) {
     }
@@ -39,7 +58,30 @@ class ViewController: UIViewController {
             present(emptyFieldAlert, animated: true)
         }
     }
+
     
+    @objc func keyboardWillResize(notification: Notification) {
+        guard let userInfo = notification.userInfo else { return }
+        guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] else { return }
+        guard let keyboardFrameValue = keyboardFrame as? NSValue else { return }
+        
+        let keyboardSize = keyboardFrameValue.cgRectValue
+        let constant: CGFloat
+        
+        if notification.name == UIResponder.keyboardWillShowNotification {
+            if signInButtonConstraint.constant < keyboardSize.height {
+                constant = keyboardSize.height
+            }
+                else {
+            constant = signInButtonConstraint.constant
+                
+            }
+        } else {
+            constant = signInButtonConstraint.constant
+        }
+        
+        signInButtonConstraint.constant = constant
+    }
     //close keyboard on tap at free space
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

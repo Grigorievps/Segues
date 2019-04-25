@@ -37,9 +37,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJr-Wd-yMr">
-                                <rect key="frame" x="147" y="552" width="120" height="60"/>
+                                <rect key="frame" x="147" y="552" width="120" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="U0I-Vz-fPw"/>
+                                    <constraint firstAttribute="height" constant="50" id="9dh-ff-Mwp"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="yOe-1d-Woi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="30"/>
@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gns-Jb-7Mw">
-                                <rect key="frame" x="20" y="679" width="374" height="30"/>
+                                <rect key="frame" x="20" y="762" width="374" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyr-pd-Ksa">
                                         <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="30"/>
@@ -83,13 +83,14 @@
                             <constraint firstItem="nJr-Wd-yMr" firstAttribute="top" secondItem="Hwu-7i-mXc" secondAttribute="bottom" constant="27" id="EO9-7p-1Eo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gns-Jb-7Mw" secondAttribute="trailing" constant="20" id="Enf-dd-6ea"/>
                             <constraint firstItem="gns-Jb-7Mw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Pf7-7i-MAC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="nJr-Wd-yMr" secondAttribute="bottom" constant="250" id="Pt4-8B-8ai"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nJr-Wd-yMr" secondAttribute="bottom" constant="250" id="Pt4-8B-8ai"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gns-Jb-7Mw" secondAttribute="bottom" constant="70" id="T2I-6O-q0B"/>
                             <constraint firstItem="gns-Jb-7Mw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bva-7c-34J"/>
-                            <constraint firstItem="gns-Jb-7Mw" firstAttribute="top" secondItem="nJr-Wd-yMr" secondAttribute="bottom" constant="67" id="ebq-pJ-q9C"/>
+                            <constraint firstItem="gns-Jb-7Mw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nJr-Wd-yMr" secondAttribute="bottom" constant="67" id="ebq-pJ-q9C"/>
                             <constraint firstItem="Hwu-7i-mXc" firstAttribute="top" secondItem="FC5-yU-Uuc" secondAttribute="bottom" constant="19.5" id="fnU-Wv-7Q4"/>
                             <constraint firstItem="Hwu-7i-mXc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ief-Qt-xkt"/>
                             <constraint firstItem="FC5-yU-Uuc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lVJ-8g-w2i"/>
-                            <constraint firstItem="FC5-yU-Uuc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ruU-u0-Biw"/>
+                            <constraint firstItem="FC5-yU-Uuc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" priority="999" id="ruU-u0-Biw"/>
                             <constraint firstItem="Hwu-7i-mXc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="vJO-Gc-K7S"/>
                             <constraint firstItem="FC5-yU-Uuc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="zxO-g3-NGP"/>
                         </constraints>
@@ -97,6 +98,7 @@
                     </view>
                     <connections>
                         <outlet property="passwordTF" destination="Hwu-7i-mXc" id="oQ7-tx-fzv"/>
+                        <outlet property="signInButtonConstraint" destination="Pt4-8B-8ai" id="UBq-dX-8XW"/>
                         <outlet property="userNameTF" destination="FC5-yU-Uuc" id="sIR-Td-Ltn"/>
                     </connections>
                 </viewController>
