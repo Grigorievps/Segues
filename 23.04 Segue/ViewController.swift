@@ -12,34 +12,22 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
-    @IBOutlet weak var signInButtonConstraint: NSLayoutConstraint!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //Observers for keyboard
-        func addKeyboardObservers() {
-            let names: [NSNotification.Name] = [
-                UIResponder.keyboardWillShowNotification,
-                UIResponder.keyboardWillHideNotification
-            ]
-            
-            for name in names {
-                NotificationCenter.default.addObserver(
-                    self,
-                    selector: #selector(keyboardWillResize),
-                    name: name,
-                    object: nil
-                )
-            }
-        }
-        
-    }
     
 
     @IBAction func forgotUserNameTapped(_ sender: UIButton) {
+        let forgotUserNameAC = UIAlertController(title: "Forgot User Name", message: "Your User Name is pavel", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        forgotUserNameAC.addAction(ok)
+        present(forgotUserNameAC, animated: true)
     }
+    
     @IBAction func forgotPasswordTapped(_ sender: UIButton) {
+        let forgotPasswordAC = UIAlertController(title: "Forgot Password", message: "Your Password is 123", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        forgotPasswordAC.addAction(ok)
+        present(forgotPasswordAC, animated: true)
     }
+    
     @IBAction func signInButtonTapped(_ sender: UIButton) {
         let wrongDataAlert = UIAlertController(title: "Ошибка", message: "Неверный логин или пароль", preferredStyle: .alert)
         let emptyFieldAlert = UIAlertController(title: "Ошибка", message: "Введите логин и пароль", preferredStyle: .alert)
@@ -48,39 +36,15 @@ class ViewController: UIViewController {
         wrongDataAlert.addAction(ok)
         
         if (userNameTF.text?.isEmpty == false) && (passwordTF.text?.isEmpty == false)  {
-            if (userNameTF.text == "123") && (passwordTF.text == "123")
+            if (userNameTF.text == "pavel") && (passwordTF.text == "123")
             {
-                print("Entry OK")
+                performSegue(withIdentifier: "signinSegue", sender: nil)
             } else {
                 present(wrongDataAlert, animated: true)
             }
         } else {
             present(emptyFieldAlert, animated: true)
         }
-    }
-
-    
-    @objc func keyboardWillResize(notification: Notification) {
-        guard let userInfo = notification.userInfo else { return }
-        guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] else { return }
-        guard let keyboardFrameValue = keyboardFrame as? NSValue else { return }
-        
-        let keyboardSize = keyboardFrameValue.cgRectValue
-        let constant: CGFloat
-        
-        if notification.name == UIResponder.keyboardWillShowNotification {
-            if signInButtonConstraint.constant < keyboardSize.height {
-                constant = keyboardSize.height
-            }
-                else {
-            constant = signInButtonConstraint.constant
-                
-            }
-        } else {
-            constant = signInButtonConstraint.constant
-        }
-        
-        signInButtonConstraint.constant = constant
     }
     //close keyboard on tap at free space
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
