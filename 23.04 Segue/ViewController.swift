@@ -10,22 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var userNameTF: UITextField!
-    @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
 
     @IBAction func forgotUserNameTapped(_ sender: UIButton) {
-        let forgotUserNameAC = UIAlertController(title: "Forgot User Name", message: "Your User Name is pavel", preferredStyle: .alert)
+        let forgotUserNameAlertController = UIAlertController(title: "Forgot User Name", message: "Your User Name is pavel", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default)
-        forgotUserNameAC.addAction(ok)
-        present(forgotUserNameAC, animated: true)
+        forgotUserNameAlertController.addAction(ok)
+        present(forgotUserNameAlertController, animated: true)
     }
     
     @IBAction func forgotPasswordTapped(_ sender: UIButton) {
-        let forgotPasswordAC = UIAlertController(title: "Forgot Password", message: "Your Password is 123", preferredStyle: .alert)
+        let forgotPasswordAlertController = UIAlertController(title: "Forgot Password", message: "Your Password is 123", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default)
-        forgotPasswordAC.addAction(ok)
-        present(forgotPasswordAC, animated: true)
+        forgotPasswordAlertController.addAction(ok)
+        present(forgotPasswordAlertController, animated: true)
     }
     
     @IBAction func signInButtonTapped(_ sender: UIButton) {
@@ -35,8 +35,8 @@ class ViewController: UIViewController {
         emptyFieldAlert.addAction(ok)
         wrongDataAlert.addAction(ok)
         
-        if (userNameTF.text?.isEmpty == false) && (passwordTF.text?.isEmpty == false)  {
-            if (userNameTF.text == "pavel") && (passwordTF.text == "123")
+        if (userNameTextField.text?.isEmpty == false) && (passwordTextField.text?.isEmpty == false)  {
+            if (userNameTextField.text == "pavel") && (passwordTextField.text == "123")
             {
                 performSegue(withIdentifier: "signinSegue", sender: nil)
             } else {

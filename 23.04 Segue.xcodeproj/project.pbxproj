@@ -12,7 +12,7 @@
 		31419F48226F880C007AB71C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31419F46226F880C007AB71C /* Main.storyboard */; };
 		31419F4B226F880C007AB71C /* _3_04_Segue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31419F49226F880C007AB71C /* _3_04_Segue.xcdatamodeld */; };
 		31419F50226F880D007AB71C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31419F4E226F880D007AB71C /* LaunchScreen.storyboard */; };
-		31DC91012271E54B007C6B00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31DC91002271E54B007C6B00 /* Assets.xcassets */; };
+		31F12869227322FB0094D2C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31F12868227322FB0094D2C9 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		31419F4A226F880C007AB71C /* _3_04_Segue.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _3_04_Segue.xcdatamodel; sourceTree = "<group>"; };
 		31419F4F226F880D007AB71C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31419F51226F880D007AB71C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31DC91002271E54B007C6B00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		31F12868227322FB0094D2C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 				31419F4E226F880D007AB71C /* LaunchScreen.storyboard */,
 				31419F51226F880D007AB71C /* Info.plist */,
 				31419F49226F880C007AB71C /* _3_04_Segue.xcdatamodeld */,
-				31DC91002271E54B007C6B00 /* Assets.xcassets */,
+				31F12868227322FB0094D2C9 /* Assets.xcassets */,
 			);
 			path = "23.04 Segue";
 			sourceTree = "<group>";
@@ -126,7 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31419F50226F880D007AB71C /* LaunchScreen.storyboard in Resources */,
-				31DC91012271E54B007C6B00 /* Assets.xcassets in Resources */,
+				31F12869227322FB0094D2C9 /* Assets.xcassets in Resources */,
 				31419F48226F880C007AB71C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
