@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJr-Wd-yMr">
-                                <rect key="frame" x="100" y="391.5" width="120" height="50"/>
+                                <rect key="frame" x="100" y="269" width="120" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9dh-ff-Mwp"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="yOe-1d-Woi"/>
@@ -57,7 +57,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MHd-ju-Gmb">
-                                <rect key="frame" x="50" y="212.5" width="220" height="45"/>
+                                <rect key="frame" x="50" y="155" width="220" height="45"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user " translatesAutoresizingMaskIntoConstraints="NO" id="2Hx-fF-C0Q">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
@@ -74,7 +74,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ODh-u4-c4V">
-                                <rect key="frame" x="50" y="271.5" width="220" height="45"/>
+                                <rect key="frame" x="50" y="214" width="220" height="45"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password " translatesAutoresizingMaskIntoConstraints="NO" id="J84-nv-GXY">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
@@ -95,22 +95,22 @@
                         <constraints>
                             <constraint firstItem="nJr-Wd-yMr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6kb-wM-BlS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MHd-ju-Gmb" secondAttribute="trailing" constant="50" id="75Z-ep-3k7"/>
-                            <constraint firstItem="nJr-Wd-yMr" firstAttribute="top" secondItem="ODh-u4-c4V" secondAttribute="bottom" constant="75" id="ERy-Fz-aRh"/>
+                            <constraint firstItem="nJr-Wd-yMr" firstAttribute="top" secondItem="ODh-u4-c4V" secondAttribute="bottom" constant="10" id="ERy-Fz-aRh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gns-Jb-7Mw" secondAttribute="trailing" constant="20" id="Enf-dd-6ea"/>
                             <constraint firstItem="ODh-u4-c4V" firstAttribute="top" secondItem="MHd-ju-Gmb" secondAttribute="bottom" constant="14" id="LvP-Ib-uxU"/>
                             <constraint firstItem="gns-Jb-7Mw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Pf7-7i-MAC"/>
                             <constraint firstItem="MHd-ju-Gmb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="SR8-Hc-15g"/>
                             <constraint firstItem="ODh-u4-c4V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="SmK-jL-jj7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gns-Jb-7Mw" secondAttribute="bottom" constant="70" id="T2I-6O-q0B"/>
+                            <constraint firstItem="nJr-Wd-yMr" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="VL8-Xi-4Rh"/>
                             <constraint firstItem="gns-Jb-7Mw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bva-7c-34J"/>
-                            <constraint firstItem="ODh-u4-c4V" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="eiX-xY-YSP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ODh-u4-c4V" secondAttribute="trailing" constant="50" id="uoY-xU-dNm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="passwordTF" destination="Hwu-7i-mXc" id="oQ7-tx-fzv"/>
-                        <outlet property="userNameTF" destination="FC5-yU-Uuc" id="sIR-Td-Ltn"/>
+                        <outlet property="passwordTextField" destination="Hwu-7i-mXc" id="Yhx-nS-3Oo"/>
+                        <outlet property="userNameTextField" destination="FC5-yU-Uuc" id="bHd-KX-kgq"/>
                         <segue destination="o37-gI-SRE" kind="show" identifier="signinSegue" id="Dci-WH-Mnn"/>
                     </connections>
                 </viewController>
@@ -265,7 +265,7 @@
                                         <rect key="frame" x="0.0" y="270" width="280" height="75"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift " translatesAutoresizingMaskIntoConstraints="NO" id="qYN-bo-Wl7">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="75.000000000000028"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="75" id="LaV-ue-z24"/>
                                                     <constraint firstAttribute="height" constant="75" id="dRK-qa-5zh"/>
@@ -375,7 +375,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me " translatesAutoresizingMaskIntoConstraints="NO" id="kkm-ia-bo1">
-                                <rect key="frame" x="40" y="81" width="240" height="186"/>
+                                <rect key="frame" x="40" y="81" width="240" height="186.00000000000011"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="qJg-B7-4sa">
                                 <rect key="frame" x="40" y="290" width="240" height="219"/>

@@ -29,21 +29,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func signInButtonTapped(_ sender: UIButton) {
-        let wrongDataAlert = UIAlertController(title: "Ошибка", message: "Неверный логин или пароль", preferredStyle: .alert)
-        let emptyFieldAlert = UIAlertController(title: "Ошибка", message: "Введите логин и пароль", preferredStyle: .alert)
+        let wrongDataAlertController = UIAlertController(title: "Ошибка", message: "Неверный логин или пароль", preferredStyle: .alert)
+        let emptyFieldAlertController = UIAlertController(title: "Ошибка", message: "Введите логин и пароль", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default)
-        emptyFieldAlert.addAction(ok)
-        wrongDataAlert.addAction(ok)
+        emptyFieldAlertController.addAction(ok)
+        wrongDataAlertController.addAction(ok)
         
         if (userNameTextField.text?.isEmpty == false) && (passwordTextField.text?.isEmpty == false)  {
             if (userNameTextField.text == "pavel") && (passwordTextField.text == "123")
             {
                 performSegue(withIdentifier: "signinSegue", sender: nil)
             } else {
-                present(wrongDataAlert, animated: true)
+                present(wrongDataAlertController, animated: true)
             }
         } else {
-            present(emptyFieldAlert, animated: true)
+            present(emptyFieldAlertController, animated: true)
         }
     }
     //close keyboard on tap at free space
